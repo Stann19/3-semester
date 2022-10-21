@@ -12,7 +12,7 @@ struct Comparator {
 };
 
 struct double_Comparator final : Comparator<double> {
-    int operator()(double* a, double* b) const {
+    int operator()(double* a, double* b) const override {
         if (*a < *b) {
             return -1;
         }
@@ -24,7 +24,7 @@ struct double_Comparator final : Comparator<double> {
 };
 
 struct point_Comparator final : Comparator<point> {
-    int operator()(point* a, point* b) const {
+    int operator()(point* a, point* b) const override {
         int square_a = a->x * a->y;
         int square_b = b->x * b->y;
         if (square_a < square_b) {
