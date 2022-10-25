@@ -79,14 +79,6 @@ public:
 		return data[y_idx * x_size + x_idx];
 	}
 
-	//присваивание к единичному элементу
-	Grid<T>& operator=(T const& t) {
-		for (auto it = data, end = data + x_size * y_size; it < end; it++) {
-			*it = t;
-		}
-		return *this;
-	}
-
 	//оператор индексирования
 	T* operator[](size_type y_idx) {
 		return data + y_idx * x_size;
